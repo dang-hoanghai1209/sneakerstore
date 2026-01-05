@@ -1,0 +1,838 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- =========================================================
+      Premium Sneaker Store — Homepage Template (HTML + CSS + JS)
+      File: index.html
+      Notes:
+      - Vanilla JS only (no libraries)
+      - Fully responsive via CSS Grid/Flex + media queries
+    ========================================================== -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SOLESTREET — Premium Sneakers</title>
+    <meta
+      name="description"
+      content="SOLESTREET — premium sneaker store homepage template. Clean, modern UI built with HTML + CSS + JS."
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- =========================================================
+      Toasts (JS will inject messages here)
+    ========================================================== -->
+    <div class="toasts" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- =========================================================
+      1) Announcement Bar
+    ========================================================== -->
+    <div class="announce" role="region" aria-label="Announcement">
+      <div class="container announce__inner">
+        <p class="announce__text">
+          Free shipping over <strong>$120</strong> · Winter Drop is live · Use code
+          <strong>SOLE10</strong> for 10% off
+        </p>
+        <a class="announce__link" href="#new-arrivals">Shop deals</a>
+      </div>
+    </div>
+
+    <!-- =========================================================
+      Mobile Drawer (JS toggles)
+    ========================================================== -->
+    <div class="drawer" id="drawer" aria-hidden="true">
+      <div class="drawer__overlay" data-drawer-close></div>
+      <aside class="drawer__panel" role="dialog" aria-modal="true" aria-label="Mobile menu">
+        <div class="drawer__head">
+          <a class="brand" href="#" aria-label="SOLESTREET Home">
+            <span class="brand__mark" aria-hidden="true">SS</span>
+            <span class="brand__name">SOLESTREET</span>
+          </a>
+          <button class="icon-btn icon-btn--ghost" type="button" data-drawer-close aria-label="Close menu">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18.3 5.7a1 1 0 0 1 0 1.4L13.4 12l4.9 4.9a1 1 0 1 1-1.4 1.4L12 13.4l-4.9 4.9a1 1 0 1 1-1.4-1.4l4.9-4.9-4.9-4.9a1 1 0 1 1 1.4-1.4l4.9 4.9 4.9-4.9a1 1 0 0 1 1.4 0Z"/>
+            </svg>
+          </button>
+        </div>
+
+        <nav class="drawer__nav" aria-label="Mobile navigation">
+          <a class="drawer__link" href="#home" data-drawer-close>Home</a>
+          <a class="drawer__link" href="#categories" data-drawer-close>Categories</a>
+          <a class="drawer__link" href="#new-arrivals" data-drawer-close>New Arrivals</a>
+          <a class="drawer__link" href="#best-sellers" data-drawer-close>Best Sellers</a>
+          <a class="drawer__link" href="#support" data-drawer-close>Support</a>
+        </nav>
+
+        <div class="drawer__search">
+          <label class="sr-only" for="mq">Search</label>
+          <input id="mq" class="drawer__input" type="search" placeholder="Search sneakers, brands…" />
+          <button class="btn btn--primary" type="button" id="mobileSearchBtn">Search</button>
+          <p class="muted drawer__hint">Tip: type “runner” and press Search.</p>
+        </div>
+      </aside>
+    </div>
+
+    <!-- =========================================================
+      2) Sticky Header
+    ========================================================== -->
+    <header class="header" role="banner">
+      <div class="container header__inner">
+        <a class="brand" href="#" aria-label="SOLESTREET Home">
+          <span class="brand__mark" aria-hidden="true">SS</span>
+          <span class="brand__name">SOLESTREET</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <a class="nav__link is-active" href="#home">Trang chủ</a>
+          <a class="nav__link" href="#categories">Giày thể thao</a>
+          <a class="nav__link" href="#new-arrivals">New Arrivals</a>
+          <a class="nav__link" href="#best-sellers">Best Sellers</a>
+          <a class="nav__link" href="#support">Support</a>
+        </nav>
+
+        <div class="header__actions">
+          <form class="search" role="search" aria-label="Search products" id="searchForm">
+            <label class="sr-only" for="q">Search</label>
+            <input
+              id="q"
+              name="q"
+              class="search__input"
+              type="search"
+              placeholder="Search sneakers, brands…"
+              autocomplete="off"
+            />
+            <button class="search__btn" type="submit" aria-label="Submit search">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M10.5 3a7.5 7.5 0 1 0 4.73 13.33l3.72 3.72a1 1 0 0 0 1.42-1.42l-3.72-3.72A7.5 7.5 0 0 0 10.5 3Zm0 2a5.5 5.5 0 1 1 0 11a5.5 5.5 0 0 1 0-11Z"
+                />
+              </svg>
+            </button>
+          </form>
+
+          <a class="icon-btn" href="#" aria-label="View cart" id="cartBtn">
+            <span class="icon-btn__badge" id="cartCount" aria-label="0 items in cart">0</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M7 18a2 2 0 1 0 0 4a2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4a2 2 0 0 0 0-4ZM6.2 6h15.6a1 1 0 0 1 .97 1.24l-1.5 6A2 2 0 0 1 19.33 15H8.1a2 2 0 0 1-1.94-1.52L4.28 4H2a1 1 0 1 1 0-2h3a1 1 0 0 1 .97.76L6.2 6Zm.57 2 1.26 5h11.3l1.25-5H6.77Z"
+              />
+            </svg>
+          </a>
+
+          <a class="icon-btn" href="#" aria-label="Account" id="accountBtn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 12a4.5 4.5 0 1 0-4.5-4.5A4.5 4.5 0 0 0 12 12Zm0 2c-4.42 0-8 2.24-8 5v1a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-1c0-2.76-3.58-5-8-5Z"
+              />
+            </svg>
+          </a>
+
+          <button class="menu-btn" type="button" aria-label="Open menu" id="menuBtn">
+            <span class="menu-btn__bar" aria-hidden="true"></span>
+            <span class="menu-btn__bar" aria-hidden="true"></span>
+            <span class="menu-btn__bar" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="home">
+      <!-- =========================================================
+        Hero
+      ========================================================== -->
+      <section class="hero section-full" aria-label="Hero">
+        <div class="container hero__grid">
+          <div class="hero__content">
+            <p class="pill">
+              <span class="pill__dot" aria-hidden="true"></span>
+              Winter Drop · Limited Pairs
+            </p>
+
+            <h1 class="hero__title">
+              Step into
+              <span class="text-gradient">premium</span>
+              comfort.
+            </h1>
+
+            <p class="hero__lead">
+              Curated silhouettes, refined materials, and street-ready design.
+              Discover your next pair—built for everyday flex.
+            </p>
+
+            <div class="hero__cta">
+              <a class="btn btn--primary" href="#new-arrivals">Shop Now</a>
+              <a class="btn btn--ghost" href="#new-arrivals">New Arrivals</a>
+            </div>
+
+            <dl class="stats" aria-label="Store stats">
+              <div class="stats__item">
+                <dt class="stats__k">2K+</dt>
+                <dd class="stats__v">Pairs in stock</dd>
+              </div>
+              <div class="stats__item">
+                <dt class="stats__k">48H</dt>
+                <dd class="stats__v">Fast dispatch</dd>
+              </div>
+              <div class="stats__item">
+                <dt class="stats__k">4.9</dt>
+                <dd class="stats__v">Avg. rating</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="hero__media" aria-label="Featured sneaker image">
+            <div class="hero-card">
+              <div class="hero-card__img">
+                <img
+                  src="https://picsum.photos/id/1011/900/700"
+                  alt="Featured sneaker on gradient background"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="badge-float" aria-label="Product highlight">
+                <span class="badge-float__top">New</span>
+                <span class="badge-float__main">Aero Runner</span>
+                <span class="badge-float__sub">From $149</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+        Brands
+      ========================================================== -->
+      <section class="brands" aria-label="Brands">
+        <div class="container-narrow">
+          <p class="section-kicker">Trusted by sneakerheads</p>
+          <div class="brands__strip" role="list">
+            <span class="brand-chip" role="listitem">NIKE</span>
+            <span class="brand-chip" role="listitem">ADIDAS</span>
+            <span class="brand-chip" role="listitem">PUMA</span>
+            <span class="brand-chip" role="listitem">NEW BALANCE</span>
+            <span class="brand-chip" role="listitem">ASICS</span>
+            <span class="brand-chip" role="listitem">CONVERSE</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+        Categories
+      ========================================================== -->
+      <section id="categories" class="section" aria-label="Categories">
+        <div class="container-narrow">
+      
+          <header class="section-head">
+            <div>
+              <p class="section-kicker">Browse</p>
+              <h2 class="section-title">Shop by category</h2>
+            </div>
+            <a class="link-arrow" href="#" aria-label="View all categories">
+              View all <span aria-hidden="true">→</span>
+            </a>
+          </header>
+
+          <div class="cat-grid">
+            <a class="cat-card" href="#" aria-label="Shop Men's sneakers">
+              <div class="cat-card__media">
+                <img src="https://picsum.photos/id/1018/800/600" alt="Men's sneakers category" loading="lazy" />
+              </div>
+              <div class="cat-card__body">
+                <h3 class="cat-card__title">Men</h3>
+                <p class="cat-card__meta">Performance & lifestyle</p>
+              </div>
+            </a>
+
+            <a class="cat-card" href="#" aria-label="Shop Women's sneakers">
+              <div class="cat-card__media">
+                <img src="https://picsum.photos/id/1027/800/600" alt="Women's sneakers category" loading="lazy" />
+              </div>
+              <div class="cat-card__body">
+                <h3 class="cat-card__title">Women</h3>
+                <p class="cat-card__meta">Fresh colorways</p>
+              </div>
+            </a>
+
+            <a class="cat-card" href="#" aria-label="Shop Kids sneakers">
+              <div class="cat-card__media">
+                <img src="https://picsum.photos/id/1005/800/600" alt="Kids sneakers category" loading="lazy" />
+              </div>
+              <div class="cat-card__body">
+                <h3 class="cat-card__title">Kids</h3>
+                <p class="cat-card__meta">Comfy & durable</p>
+              </div>
+            </a>
+
+            <a class="cat-card cat-card--sale" href="#" aria-label="Shop Sale">
+              <div class="cat-card__media">
+                <img src="https://picsum.photos/id/1035/800/600" alt="Sale sneakers category" loading="lazy" />
+              </div>
+              <div class="cat-card__body">
+                <h3 class="cat-card__title">Sale</h3>
+                <p class="cat-card__meta">Up to 40% off</p>
+              </div>
+              <span class="tag tag--hot" aria-label="Hot deal">HOT</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+        New Arrivals (8)
+      ========================================================== -->
+      <section id="new-arrivals" class="section" aria-label="New Arrivals">
+        <div class="container-narrow">      
+          <header class="section-head">
+            <div>
+              <p class="section-kicker">Just dropped</p>
+              <h2 class="section-title">New Arrivals</h2>
+            </div>
+            <div class="chips" aria-label="Filters (JS demo)">
+              <button class="chip is-active" type="button" data-filter="all">All</button>
+              <button class="chip" type="button" data-filter="running">Running</button>
+              <button class="chip" type="button" data-filter="lifestyle">Lifestyle</button>
+              <button class="chip" type="button" data-filter="basketball">Basketball</button>
+            </div>
+          </header>
+
+          <div class="product-grid" id="productGrid">
+            <!-- Each product-card carries data-* for JS (quick view, filtering, cart) -->
+
+            <article class="product-card" data-category="running" data-name="Aero Runner" data-price="149" data-rating="5"
+              data-image="https://picsum.photos/id/1062/900/900">
+              <a class="product-card__media" href="#" data-quick-view aria-label="Quick view Aero Runner">
+                <img src="images/Group 1.png" alt="Aero Runner sneaker" loading="lazy" />
+                <span class="quick-view" aria-hidden="true">Quick view</span>
+              </a>
+              <div class="product-card__body">
+                <div class="product-card__top">
+                  <h3 class="product-card__title">Aero Runner</h3>
+                  <p class="product-card__price">$149</p>
+                </div>
+                <p class="product-card__meta">
+                  <span class="stars" aria-label="Rated 5 out of 5">★★★★★</span>
+                  <span class="muted">·</span>
+                  <span class="muted">Lightweight</span>
+                </p>
+                <div class="product-card__actions">
+                  <button class="btn btn--small btn--primary" type="button" data-add-to-cart>Add to cart</button>
+                  <button class="btn btn--small btn--ghost" type="button" data-quick-view>Details</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="lifestyle" data-name="Studio Court" data-price="129" data-rating="4.5"
+              data-image="https://picsum.photos/id/1059/900/900">
+              <a class="product-card__media" href="#" data-quick-view aria-label="Quick view Studio Court">
+                <img src="images/Group 4.png" alt="Studio Court sneaker" loading="lazy" />
+                <span class="quick-view" aria-hidden="true">Quick view</span>
+              </a>
+              <div class="product-card__body">
+                <div class="product-card__top">
+                  <h3 class="product-card__title">Studio Court</h3>
+                  <p class="product-card__price">$129</p>
+                </div>
+                <p class="product-card__meta">
+                  <span class="stars" aria-label="Rated 4.5 out of 5">★★★★☆</span>
+                  <span class="muted">·</span>
+                  <span class="muted">Everyday</span>
+                </p>
+                <div class="product-card__actions">
+                  <button class="btn btn--small btn--primary" type="button" data-add-to-cart>Add to cart</button>
+                  <button class="btn btn--small btn--ghost" type="button" data-quick-view>Details</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="running" data-name="Neon Glide" data-price="169" data-rating="5"
+              data-image="https://picsum.photos/id/1040/900/900">
+              <a class="product-card__media" href="#" data-quick-view aria-label="Quick view Neon Glide">
+                <img src="images/Group 3.png" alt="Neon Glide sneaker" loading="lazy" />
+                <span class="quick-view" aria-hidden="true">Quick view</span>
+              </a>
+              <div class="product-card__body">
+                <div class="product-card__top">
+                  <h3 class="product-card__title">Neon Glide</h3>
+                  <p class="product-card__price">$169</p>
+                </div>
+                <p class="product-card__meta">
+                  <span class="stars" aria-label="Rated 5 out of 5">★★★★★</span>
+                  <span class="muted">·</span>
+                  <span class="muted">Cushioned</span>
+                </p>
+                <div class="product-card__actions">
+                  <button class="btn btn--small btn--primary" type="button" data-add-to-cart>Add to cart</button>
+                  <button class="btn btn--small btn--ghost" type="button" data-quick-view>Details</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="lifestyle" data-name="Urban Stack" data-price="139" data-rating="4"
+              data-image="https://picsum.photos/id/1033/900/900">
+              <a class="product-card__media" href="#" data-quick-view aria-label="Quick view Urban Stack">
+                <img src="images/Group 7.png" alt="Urban Stack sneaker" loading="lazy" />
+                <span class="quick-view" aria-hidden="true">Quick view</span>
+              </a>
+              <div class="product-card__body">
+                <div class="product-card__top">
+                  <h3 class="product-card__title">Urban Stack</h3>
+                  <p class="product-card__price">$139</p>
+                </div>
+                <p class="product-card__meta">
+                  <span class="stars" aria-label="Rated 4 out of 5">★★★★☆</span>
+                  <span class="muted">·</span>
+                  <span class="muted">Street</span>
+                </p>
+                <div class="product-card__actions">
+                  <button class="btn btn--small btn--primary" type="button" data-add-to-cart>Add to cart</button>
+                  <button class="btn btn--small btn--ghost" type="button" data-quick-view>Details</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="running" data-name="Cloud Sprint" data-price="155" data-rating="4.5"
+              data-image="https://picsum.photos/id/1020/900/900">
+              <a class="product-card__media" href="#" data-quick-view aria-label="Quick view Cloud Sprint">
+                <img src="images/Group 2.png" alt="Cloud Sprint sneaker" loading="lazy" />
+                <span class="quick-view" aria-hidden="true">Quick view</span>
+              </a>
+              <div class="product-card__body">
+                <div class="product-card__top">
+                  <h3 class="product-card__title">Cloud Sprint</h3>
+                  <p class="product-card__price">$155</p>
+                </div>
+                <p class="product-card__meta">
+                  <span class="stars" aria-label="Rated 4.5 out of 5">★★★★☆</span>
+                  <span class="muted">·</span>
+                  <span class="muted">Runner</span>
+                </p>
+                <div class="product-card__actions">
+                  <button class="btn btn--small btn--primary" type="button" data-add-to-cart>Add to cart</button>
+                  <button class="btn btn--small btn--ghost" type="button" data-quick-view>Details</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="lifestyle" data-name="Heritage Low" data-price="119" data-rating="4"
+              data-image="https://picsum.photos/id/1015/900/900">
+              <a class="product-card__media" href="#" data-quick-view aria-label="Quick view Heritage Low">
+                <img src="images/Group 5.png" alt="Heritage Low sneaker" loading="lazy" />
+                <span class="quick-view" aria-hidden="true">Quick view</span>
+              </a>
+              <div class="product-card__body">
+                <div class="product-card__top">
+                  <h3 class="product-card__title">Heritage Low</h3>
+                  <p class="product-card__price">$119</p>
+                </div>
+                <p class="product-card__meta">
+                  <span class="stars" aria-label="Rated 4 out of 5">★★★★☆</span>
+                  <span class="muted">·</span>
+                  <span class="muted">Classic</span>
+                </p>
+                <div class="product-card__actions">
+                  <button class="btn btn--small btn--primary" type="button" data-add-to-cart>Add to cart</button>
+                  <button class="btn btn--small btn--ghost" type="button" data-quick-view>Details</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="basketball" data-name="Volt Runner" data-price="179" data-rating="5"
+              data-image="https://picsum.photos/id/1003/900/900">
+              <a class="product-card__media" href="#" data-quick-view aria-label="Quick view Volt Runner">
+                <img src="images/Group 6.png" alt="Volt Runner sneaker" loading="lazy" />
+                <span class="quick-view" aria-hidden="true">Quick view</span>
+              </a>
+              <div class="product-card__body">
+                <div class="product-card__top">
+                  <h3 class="product-card__title">Volt Runner</h3>
+                  <p class="product-card__price">$179</p>
+                </div>
+                <p class="product-card__meta">
+                  <span class="stars" aria-label="Rated 5 out of 5">★★★★★</span>
+                  <span class="muted">·</span>
+                  <span class="muted">Energy return</span>
+                </p>
+                <div class="product-card__actions">
+                  <button class="btn btn--small btn--primary" type="button" data-add-to-cart>Add to cart</button>
+                  <button class="btn btn--small btn--ghost" type="button" data-quick-view>Details</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card" data-category="lifestyle" data-name="Mono Slip" data-price="99" data-rating="4"
+              data-image="https://picsum.photos/id/1019/900/900">
+              <a class="product-card__media" href="#" data-quick-view aria-label="Quick view Mono Slip">
+                <img src="images/Group 8.png" alt="Mono Slip sneaker" loading="lazy" />
+                <span class="quick-view" aria-hidden="true">Quick view</span>
+              </a>
+              <div class="product-card__body">
+                <div class="product-card__top">
+                  <h3 class="product-card__title">Mono Slip</h3>
+                  <p class="product-card__price">$99</p>
+                </div>
+                <p class="product-card__meta">
+                  <span class="stars" aria-label="Rated 4 out of 5">★★★★☆</span>
+                  <span class="muted">·</span>
+                  <span class="muted">Minimal</span>
+                </p>
+                <div class="product-card__actions">
+                  <button class="btn btn--small btn--primary" type="button" data-add-to-cart>Add to cart</button>
+                  <button class="btn btn--small btn--ghost" type="button" data-quick-view>Details</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+        Featured Collection
+      ========================================================== -->
+      <section class="section feature" aria-label="Featured collection">
+        <div class="container feature__grid">
+          <div class="feature__media">
+            <div class="media-frame">
+              <img src="https://picsum.photos/id/103/1200/900" alt="Featured collection lookbook" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="feature__content">
+            <p class="section-kicker">Collection</p>
+            <h2 class="section-title">Refined materials. Street-ready edge.</h2>
+            <p class="section-lead">
+              Premium suede, breathable knits, and sculpted midsoles—crafted for long days and longer nights.
+            </p>
+
+            <ul class="checklist" aria-label="Collection highlights">
+              <li>Breathable mesh upper</li>
+              <li>Responsive foam midsole</li>
+              <li>Grippy outsole for city steps</li>
+              <li>Limited seasonal colorways</li>
+            </ul>
+
+            <div class="feature__cta">
+              <a class="btn btn--primary" href="#new-arrivals">Explore collection</a>
+              <a class="btn btn--ghost" href="#best-sellers">See best sellers</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+        Best Sellers — Carousel (scroll buttons work with JS)
+      ========================================================== -->
+      <section id="best-sellers" class="section" aria-label="Best Sellers">
+        <div class="container">
+          <header class="section-head">
+            <div>
+              <p class="section-kicker">Popular</p>
+              <h2 class="section-title">Best Sellers</h2>
+            </div>
+
+            <div class="slider-controls" aria-label="Slider controls">
+              <button class="icon-btn icon-btn--ghost" type="button" id="prevSlide" aria-label="Previous">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M15.5 5.5a1 1 0 0 1 0 1.41L10.41 12l5.09 5.09a1 1 0 1 1-1.41 1.41l-5.8-5.8a1 1 0 0 1 0-1.41l5.8-5.8a1 1 0 0 1 1.41 0Z"/>
+                </svg>
+              </button>
+              <button class="icon-btn icon-btn--ghost" type="button" id="nextSlide" aria-label="Next">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8.5 18.5a1 1 0 0 1 0-1.41L13.59 12 8.5 6.91A1 1 0 1 1 9.91 5.5l5.8 5.8a1 1 0 0 1 0 1.41l-5.8 5.8a1 1 0 0 1-1.41 0Z"/>
+                </svg>
+              </button>
+            </div>
+          </header>
+
+          <div class="carousel" id="carousel" role="region" aria-label="Best sellers carousel">
+            <article class="mini-card">
+              <a class="mini-card__media" href="#"><img src="https://picsum.photos/id/1012/900/700" alt="Zen Runner sneaker" loading="lazy" /></a>
+              <div class="mini-card__body">
+                <h3 class="mini-card__title">Zen Runner</h3>
+                <p class="mini-card__meta"><span class="stars">★★★★★</span> · $159</p>
+              </div>
+            </article>
+
+            <article class="mini-card">
+              <a class="mini-card__media" href="#"><img src="https://picsum.photos/id/1025/900/700" alt="City Lift sneaker" loading="lazy" /></a>
+              <div class="mini-card__body">
+                <h3 class="mini-card__title">City Lift</h3>
+                <p class="mini-card__meta"><span class="stars">★★★★☆</span> · $139</p>
+              </div>
+            </article>
+
+            <article class="mini-card">
+              <a class="mini-card__media" href="#"><img src="https://picsum.photos/id/1039/900/700" alt="Court Pro sneaker" loading="lazy" /></a>
+              <div class="mini-card__body">
+                <h3 class="mini-card__title">Court Pro</h3>
+                <p class="mini-card__meta"><span class="stars">★★★★☆</span> · $129</p>
+              </div>
+            </article>
+
+            <article class="mini-card">
+              <a class="mini-card__media" href="#"><img src="https://picsum.photos/id/1043/900/700" alt="Sculpt Low sneaker" loading="lazy" /></a>
+              <div class="mini-card__body">
+                <h3 class="mini-card__title">Sculpt Low</h3>
+                <p class="mini-card__meta"><span class="stars">★★★★★</span> · $169</p>
+              </div>
+            </article>
+
+            <article class="mini-card">
+              <a class="mini-card__media" href="#"><img src="https://picsum.photos/id/1060/900/700" alt="Rush Knit sneaker" loading="lazy" /></a>
+              <div class="mini-card__body">
+                <h3 class="mini-card__title">Rush Knit</h3>
+                <p class="mini-card__meta"><span class="stars">★★★★☆</span> · $149</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+        Offer (JS countdown)
+      ========================================================== -->
+      <section class="offer" aria-label="Limited time offer">
+        <div class="container offer__inner">
+          <div class="offer__content">
+            <p class="offer__kicker">Limited-time offer</p>
+            <h2 class="offer__title">Midnight Flash Sale</h2>
+            <p class="offer__lead">Save up to <strong>30%</strong> on select pairs. Once it’s gone, it’s gone.</p>
+
+            <div class="countdown" aria-label="Countdown">
+              <div class="countbox">
+                <span class="countbox__num" id="cdHours">12</span>
+                <span class="countbox__lbl">Hours</span>
+              </div>
+              <div class="countbox">
+                <span class="countbox__num" id="cdMinutes">34</span>
+                <span class="countbox__lbl">Minutes</span>
+              </div>
+              <div class="countbox">
+                <span class="countbox__num" id="cdSeconds">08</span>
+                <span class="countbox__lbl">Seconds</span>
+              </div>
+            </div>
+
+            <a class="btn btn--primary" href="#new-arrivals">Grab the deal</a>
+          </div>
+
+          <div class="offer__media" aria-hidden="true">
+            <div class="media-frame media-frame--tilt">
+              <img src="https://picsum.photos/id/1074/1200/900" alt="" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+        Testimonials
+      ========================================================== -->
+      <section class="section" aria-label="Testimonials">
+        <div class="container">
+          <header class="section-head">
+            <div>
+              <p class="section-kicker">Loved by customers</p>
+              <h2 class="section-title">What people say</h2>
+            </div>
+            <p class="section-note">
+              <span class="stars" aria-hidden="true">★★★★★</span>
+              <span class="muted">4.9 average based on 1,200+ reviews</span>
+            </p>
+          </header>
+
+          <div class="testi-grid">
+            <article class="testi-card">
+              <p class="testi-card__quote">“Packaging was premium and the fit is perfect. The cushioning feels unreal on long walks.”</p>
+              <footer class="testi-card__footer">
+                <div class="avatar" aria-hidden="true">AL</div>
+                <div>
+                  <p class="testi-card__name">Anh L.</p>
+                  <p class="testi-card__meta">Verified buyer · Aero Runner</p>
+                </div>
+              </footer>
+            </article>
+
+            <article class="testi-card">
+              <p class="testi-card__quote">“Minimal design, great materials. These look clean with everything—from jeans to smart casual.”</p>
+              <footer class="testi-card__footer">
+                <div class="avatar" aria-hidden="true">MJ</div>
+                <div>
+                  <p class="testi-card__name">Minh J.</p>
+                  <p class="testi-card__meta">Verified buyer · Heritage Low</p>
+                </div>
+              </footer>
+            </article>
+
+            <article class="testi-card">
+              <p class="testi-card__quote">“Fast shipping and true-to-size. Customer support was quick and super friendly.”</p>
+              <footer class="testi-card__footer">
+                <div class="avatar" aria-hidden="true">TN</div>
+                <div>
+                  <p class="testi-card__name">Thao N.</p>
+                  <p class="testi-card__meta">Verified buyer · Studio Court</p>
+                </div>
+              </footer>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+        Newsletter (JS validates + toast)
+      ========================================================== -->
+      <section class="newsletter" aria-label="Newsletter signup">
+        <div class="container newsletter__inner">
+          <div class="newsletter__content">
+            <p class="section-kicker">Newsletter</p>
+            <h2 class="newsletter__title">Get early access to new drops.</h2>
+            <p class="newsletter__lead">
+              Be first in line for limited releases, restocks, and members-only deals.
+            </p>
+          </div>
+
+          <form class="newsletter__form" action="#" method="post" id="newsletterForm" novalidate>
+            <label class="sr-only" for="email">Email address</label>
+            <input id="email" name="email" type="email" class="newsletter__input" placeholder="you@example.com" required />
+            <button class="btn btn--primary" type="submit">Subscribe</button>
+            <p class="newsletter__fine muted">By subscribing, you agree to receive emails from SOLESTREET.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- =========================================================
+      Footer
+    ========================================================== -->
+    <footer id="support" class="footer" aria-label="Footer">
+      <div class="container footer__grid">
+        <div class="footer__brand">
+          <a class="brand brand--footer" href="#" aria-label="SOLESTREET Home">
+            <span class="brand__mark" aria-hidden="true">SS</span>
+            <span class="brand__name">SOLESTREET</span>
+          </a>
+          <p class="footer__desc">Premium sneakers curated for comfort, style, and everyday performance.</p>
+
+          <div class="social" aria-label="Social links">
+            <a class="social__link" href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm-5 4.5A5.5 5.5 0 1 1 6.5 14A5.5 5.5 0 0 1 12 8.5Zm0 2A3.5 3.5 0 1 0 15.5 14A3.5 3.5 0 0 0 12 10.5ZM18 7a1 1 0 1 1-1 1a1 1 0 0 1 1-1Z"
+                />
+              </svg>
+            </a>
+            <a class="social__link" href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M13 22v-8h3l1-4h-4V7.5A1.5 1.5 0 0 1 14.5 6H17V2h-3.5A5.5 5.5 0 0 0 8 7.5V10H5v4h3v8h5Z" />
+              </svg>
+            </a>
+            <a class="social__link" href="#" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M16 3c.5 2.6 2.4 4.6 5 5v4c-2 0-3.8-.6-5.3-1.6V16a6 6 0 1 1-6-6c.4 0 .7 0 1.1.1V14a2 2 0 1 0 2 2V3h3.2Z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer__col" aria-label="Shop">
+          <h3 class="footer__title">Shop</h3>
+          <a class="footer__link" href="#categories">Categories</a>
+          <a class="footer__link" href="#new-arrivals">New Arrivals</a>
+          <a class="footer__link" href="#best-sellers">Best Sellers</a>
+          <a class="footer__link" href="#">Gift Cards</a>
+        </nav>
+
+        <nav class="footer__col" aria-label="Company">
+          <h3 class="footer__title">Company</h3>
+          <a class="footer__link" href="#">About</a>
+          <a class="footer__link" href="#">Careers</a>
+          <a class="footer__link" href="#">Press</a>
+          <a class="footer__link" href="#">Sustainability</a>
+        </nav>
+
+        <nav class="footer__col" aria-label="Support">
+          <h3 class="footer__title">Support</h3>
+          <a class="footer__link" href="#">Help Center</a>
+          <a class="footer__link" href="#">Shipping & Returns</a>
+          <a class="footer__link" href="#">Size Guide</a>
+          <a class="footer__link" href="#">Contact</a>
+        </nav>
+
+        <div class="footer__payments" aria-label="Payment methods">
+          <h3 class="footer__title">Payments</h3>
+          <div class="pay-badges" role="list">
+            <span class="pay" role="listitem">VISA</span>
+            <span class="pay" role="listitem">Mastercard</span>
+            <span class="pay" role="listitem">PayPal</span>
+            <span class="pay" role="listitem">Apple Pay</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer__bottom">
+        <p class="muted">© <span>2025</span> SOLESTREET. All rights reserved.</p>
+        <div class="footer__legal">
+          <a class="footer__link" href="#">Privacy</a>
+          <span class="muted">·</span>
+          <a class="footer__link" href="#">Terms</a>
+          <span class="muted">·</span>
+          <a class="footer__link" href="#">Cookies</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =========================================================
+      Quick View Modal (JS opens/closes)
+    ========================================================== -->
+    <div class="modal" id="quickView" aria-hidden="true">
+      <div class="modal__overlay" data-modal-close></div>
+      <div class="modal__panel" role="dialog" aria-modal="true" aria-label="Quick view dialog">
+        <div class="modal__head">
+          <h3 class="modal__title" id="qvTitle">Product</h3>
+          <button class="icon-btn icon-btn--ghost" type="button" data-modal-close aria-label="Close dialog">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18.3 5.7a1 1 0 0 1 0 1.4L13.4 12l4.9 4.9a1 1 0 1 1-1.4 1.4L12 13.4l-4.9 4.9a1 1 0 1 1-1.4-1.4l4.9-4.9-4.9-4.9a1 1 0 1 1 1.4-1.4l4.9 4.9 4.9-4.9a1 1 0 0 1 1.4 0Z"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="modal__body">
+          <div class="modal__media">
+            <img id="qvImage" src="https://picsum.photos/id/1062/900/900" alt="Product image" />
+          </div>
+          <div class="modal__info">
+            <p class="modal__price" id="qvPrice">$0</p>
+            <p class="modal__meta">
+              <span class="stars" id="qvStars">★★★★★</span>
+              <span class="muted">·</span>
+              <span class="muted" id="qvCategory">Category</span>
+            </p>
+
+            <p class="muted modal__desc">
+              Premium build, comfortable fit, and a clean silhouette—made to match your everyday rotation.
+            </p>
+
+            <div class="modal__row">
+              <label class="modal__label" for="qvSize">Size</label>
+              <select id="qvSize" class="select">
+                <option>EU 39</option>
+                <option>EU 40</option>
+                <option selected>EU 41</option>
+                <option>EU 42</option>
+                <option>EU 43</option>
+              </select>
+            </div>
+
+            <div class="modal__actions">
+              <button class="btn btn--primary" type="button" id="qvAdd">Add to cart</button>
+              <button class="btn btn--ghost" type="button" data-modal-close>Continue shopping</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
