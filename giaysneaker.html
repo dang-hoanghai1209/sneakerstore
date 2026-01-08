@@ -1,39 +1,21 @@
 <!doctype html>
 <html lang="vi">
   <head>
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hoàng Hải Sneakers | Giày sneaker chính hãng</title>
-    <meta
-      name="description"
-      content="Hoàng Hải Sneakers - giày sneaker chính hãng, hàng mới 2026, freeship nhanh, đổi trả dễ. Mua online uy tín, giá hợp lý."
-    />
-    <meta name="keywords" content="giày sneaker chính hãng, giày thể thao, giày chạy bộ, sneaker nam nữ, Hoàng Hải Sneakers" />
+    <title>Hoàng Hải Sneakers | Giày sneaker</title>
+    <meta name="description" content="Tất cả giày sneaker hiện có tại shop." />
     <meta name="robots" content="index, follow" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="vi_VN" />
-    <meta property="og:site_name" content="Hoàng Hải Sneakers" />
-    <meta property="og:title" content="Hoàng Hải Sneakers | Giày sneaker chính hãng" />
-    <meta
-      property="og:description"
-      content="Khám phá giày sneaker chính hãng, mẫu mới 2026, freeship nhanh, đổi trả dễ dàng."
-    />
-    <meta property="og:image" content="images/Group 1.png" />
-    <meta property="og:image:alt" content="Giày sneaker chính hãng Hoàng Hải" />
-    <meta name="twitter:card" content="summary_large_image" />
-
     <link rel="stylesheet" href="styles.css" />
   </head>
-
   <body>
     <div class="toasts" aria-live="polite" aria-atomic="true"></div>
 
     <div class="announce" role="region" aria-label="Thông báo">
       <div class="container announce__inner">
         <p class="announce__text">
-          ƯU ĐÃI TẾT 2026 • GIẢM 10% TOÀN BỘ ĐƠN • NHẬP MÃ
-          <strong>TETHHSNEAKERS</strong> • FREESHIP TỪ <strong>0–200K</strong>
+          ƯU ĐÃI TẾT 2026 · GIẢM 10% TOÀN BỘ ĐƠN · NHẬP MÃ
+          <strong>TETHHSNEAKERS</strong> · FREESHIP TỪ <strong>0-200K</strong>
         </p>
         <a class="announce__link" href="newproducts.html">MUA NGAY</a>
       </div>
@@ -43,7 +25,7 @@
       <div class="drawer__overlay" data-drawer-close></div>
       <aside class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu di động">
         <div class="drawer__head">
-          <a class="brand" href="#" aria-label="Hoàng Hải Sneakers">
+          <a class="brand" href="index.html" aria-label="Hoàng Hải Sneakers">
             <span class="brand__mark" aria-hidden="true">
               <img src="images/Group 9.png" alt="" />
             </span>
@@ -56,258 +38,134 @@
         </div>
 
         <nav class="drawer__nav" aria-label="Điều hướng di động">
-          <a class="drawer__link" href="#home" data-drawer-close>Trang chủ</a>
-          <a class="drawer__link" href="giaysneaker.html" data-drawer-close>Giày sneaker</a>
+          <a class="drawer__link" href="index.html">Trang chủ</a>
+          <a class="drawer__link" href="giaysneaker.html">Giày sneaker</a>
           <div class="drawer__sub">
             <a class="drawer__sublink" href="giaysneaker.html?brand=nike">Nike</a>
             <a class="drawer__sublink" href="giaysneaker.html?brand=adidas">Adidas</a>
             <a class="drawer__sublink" href="giaysneaker.html?brand=puma">Puma</a>
             <a class="drawer__sublink" href="giaysneaker.html?brand=converse">Converse</a>
             <a class="drawer__sublink" href="giaysneaker.html?brand=asics">Asics</a>
+            <a class="drawer__sublink" href="giaysneaker.html?brand=new-balance">New Balance</a>
           </div>
-          <a class="drawer__link" href="newproducts.html" data-drawer-close>Sản phẩm mới</a>
-          <a class="drawer__link" href="bestsellers.html" data-drawer-close>Sản phẩm bán chạy</a>
-          <a class="drawer__link" href="support.html" data-drawer-close>Hỗ trợ</a>
-          <div class="drawer__divider" aria-hidden="true"></div>
-          <a class="drawer__link drawer__link--icon" href="#" aria-label="Xem gio hang" id="cartBtn" data-drawer-close>
-            <span class="drawer__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
+          <a class="drawer__link" href="newproducts.html">Sản phẩm mới</a>
+          <a class="drawer__link" href="bestsellers.html">Sản phẩm bán chạy</a>
+          <a class="drawer__link" href="support.html">Hỗ trợ</a>
+        </nav>
+      </aside>
+    </div>
+
+    <header class="header" role="banner">
+      <div class="container header__inner">
+        <div class="header__top">
+          <a class="brand" href="index.html" aria-label="Hoàng Hải Sneakers">
+            <span class="brand__mark" aria-hidden="true">
+              <img src="images/Group 9.png" alt="" />
+            </span>
+          </a>
+
+          <div class="header__actions">
+            <form class="search" role="search" aria-label="Tìm kiếm sản phẩm" id="searchForm">
+              <label class="sr-only" for="q">Tìm kiếm</label>
+              <input
+                id="q"
+                name="q"
+                class="search__input"
+                type="search"
+                placeholder="Tìm kiếm giày sneaker, thương hiệu yêu thích..."
+                autocomplete="off"
+              />
+              <button class="search__btn" type="submit" aria-label="Tìm kiếm">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M10.5 3a7.5 7.5 0 1 0 4.73 13.33l3.72 3.72a1 1 0 0 0 1.42-1.42l-3.72-3.72A7.5 7.5 0 0 0 10.5 3Zm0 2a5.5 5.5 0 1 1 0 11a5.5 5.5 0 0 1 0-11Z"
+                  />
+                </svg>
+              </button>
+            </form>
+
+            <a class="icon-btn" href="#" aria-label="Xem giỏ hàng" id="cartBtnDesktop">
+              <span class="icon-btn__badge" id="cartCountDesktop" aria-label="0 sản phẩm trong giỏ">0</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M7 18a2 2 0 1 0 0 4a2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4a2 2 0 0 0 0-4ZM6.2 6h15.6a1 1 0 0 1 .97 1.24l-1.5 6A2 2 0 0 1 19.33 15H8.1a2 2 0 0 1-1.94-1.52L4.28 4H2a1 1 0 1 1 0-2h3a1 1 0 0 1 .97.76L6.2 6Zm.57 2 1.26 5h11.3l1.25-5H6.77Z"
                 />
               </svg>
-            </span>
-            Giỏ hàng
-            <span class="drawer__badge" id="cartCount" aria-label="0 san pham trong gio">0</span>
-          </a>
-          <a class="drawer__link drawer__link--icon" href="#" aria-label="Dang nhap" id="accountBtn" data-drawer-close>
-            <span class="drawer__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
+            </a>
+
+            <a class="icon-btn" href="#" aria-label="Tài khoản" id="accountBtnDesktop">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M12 12a4.5 4.5 0 1 0-4.5-4.5A4.5 4.5 0 0 0 12 12Zm0 2c-4.42 0-8 2.24-8 5v1a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-1c0-2.76-3.58-5-8-5Z"
                 />
               </svg>
-            </span>
-            Đăng nhập
-          </a>
-        </nav>
+            </a>
 
-        <div class="drawer__search">
-          <label class="sr-only" for="mq">Tìm kiếm</label>
-          <input id="mq" class="drawer__input" type="search" placeholder="Tìm kiếm giày sneaker, thương hiệu yêu thích..." />
-          <button class="btn btn--primary" type="button" id="mobileSearchBtn">Tìm kiếm</button>
-          <p class="muted drawer__hint">Gợi ý: nhập tên mẫu để tìm nhanh.</p>
+            <button class="menu-btn" type="button" aria-label="Mở menu" id="menuBtn">
+              <span class="menu-btn__bar" aria-hidden="true"></span>
+              <span class="menu-btn__bar" aria-hidden="true"></span>
+              <span class="menu-btn__bar" aria-hidden="true"></span>
+            </button>
+          </div>
         </div>
-      </aside>
-    </div>
 
- 
-    <header class="header" role="banner">
-  <div class="container header__inner">
-    <div class="header__top">
-      <a class="brand" href="#" aria-label="Hoàng Hải Sneakers">
-        <span class="brand__mark" aria-hidden="true">
-          <img src="images/Group 9.png" alt="" />
-        </span>
-      </a>
-
-      <div class="header__actions">
-        <form class="search" role="search" aria-label="Tìm kiếm sản phẩm" id="searchForm">
-          <label class="sr-only" for="q">Tìm kiếm</label>
-          <input
-            id="q"
-            name="q"
-            class="search__input"
-            type="search"
-            placeholder="Tìm kiếm giày sneaker, thương hiệu yêu thích..."
-            autocomplete="off"
-          />
-          <button class="search__btn" type="submit" aria-label="Tìm kiếm">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M10.5 3a7.5 7.5 0 1 0 4.73 13.33l3.72 3.72a1 1 0 0 0 1.42-1.42l-3.72-3.72A7.5 7.5 0 0 0 10.5 3Zm0 2a5.5 5.5 0 1 1 0 11a5.5 5.5 0 0 1 0-11Z"
-              />
-            </svg>
-          </button>
-        </form>
-
-        <a class="icon-btn" href="#" aria-label="Xem giỏ hàng" id="cartBtnDesktop">
-          <span class="icon-btn__badge" id="cartCountDesktop" aria-label="0 sản phẩm trong giỏ">0</span>
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M7 18a2 2 0 1 0 0 4a2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4a2 2 0 0 0 0-4ZM6.2 6h15.6a1 1 0 0 1 .97 1.24l-1.5 6A2 2 0 0 1 19.33 15H8.1a2 2 0 0 1-1.94-1.52L4.28 4H2a1 1 0 1 1 0-2h3a1 1 0 0 1 .97.76L6.2 6Zm.57 2 1.26 5h11.3l1.25-5H6.77Z"
-            />
-          </svg>
-        </a>
-
-        <a class="icon-btn" href="#" aria-label="Tài khoản" id="accountBtnDesktop">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M12 12a4.5 4.5 0 1 0-4.5-4.5A4.5 4.5 0 0 0 12 12Zm0 2c-4.42 0-8 2.24-8 5v1a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-1c0-2.76-3.58-5-8-5Z"
-            />
-          </svg>
-        </a>
-
-        <button class="menu-btn" type="button" aria-label="Mở menu" id="menuBtn">
-          <span class="menu-btn__bar" aria-hidden="true"></span>
-          <span class="menu-btn__bar" aria-hidden="true"></span>
-          <span class="menu-btn__bar" aria-hidden="true"></span>
-        </button>
+        <div id="navbar"></div>
       </div>
-    </div>
+    </header>
 
-    <div id="navbar"></div>
-  </div>
-</header>
-
-    <section class="banner" aria-label="Banner nổi bật">
-      <div class="banner__viewport">
-        <div class="banner__track" id="bannerTrack" aria-live="polite">
-          <div class="banner__slide is-active">
-            <img src="images/banner1.png" alt="Banner khuyến mãi giày sneaker" loading="lazy" />
-            <div class="banner__overlay">
-              <p class="banner__kicker">Giày sneaker</p>
-              <h2 class="banner__title">Ưu đãi nổi bật</h2>
-              <a class="btn btn--primary banner__cta" href="newproducts.html">Mua ngay</a>
-            </div>
-          </div>
-          <div class="banner__slide">
-            <img src="images/banner2.png" alt="Banner bộ sưu tập mới" loading="lazy" />
-            <div class="banner__overlay">
-              <p class="banner__kicker">Bộ sưu tập</p>
-              <h2 class="banner__title">Mẫu mới 2026</h2>
-              <a class="btn btn--primary banner__cta" href="newproducts.html">Khám phá</a>
-            </div>
-          </div>
-          <div class="banner__slide">
-            <img src="images/banner3.png" alt="Banner sản phẩm bán chạy" loading="lazy" />
-            <div class="banner__overlay">
-              <p class="banner__kicker">Bán chạy</p>
-              <h2 class="banner__title">Top sản phẩm hot</h2>
-              <a class="btn btn--primary banner__cta" href="bestsellers.html">Xem ngay</a>
-            </div>
-          </div>
-        </div>
-        <button class="banner__control banner__control--prev" type="button" aria-label="Banner trước" id="bannerPrev">
-          <span aria-hidden="true">‹</span>
-        </button>
-        <button class="banner__control banner__control--next" type="button" aria-label="Banner sau" id="bannerNext">
-          <span aria-hidden="true">›</span>
-        </button>
-        <div class="banner__dots" role="tablist" aria-label="Chọn banner">
-          <button class="banner__dot is-active" type="button" aria-label="Banner 1" data-banner-dot="0"></button>
-          <button class="banner__dot" type="button" aria-label="Banner 2" data-banner-dot="1"></button>
-          <button class="banner__dot" type="button" aria-label="Banner 3" data-banner-dot="2"></button>
-        </div>
-      </div>
-    </section>
-
-    <main id="home">
-      <section class="hero section-full" aria-label="Giới thiệu">
-        <div class="container hero__grid">
-          <div class="hero__content">
-            <p class="pill">
-              <span class="pill__dot" aria-hidden="true"></span>
-              Săn hàng Tết • Ưu đãi cùng Hoàng Hải Sneakers
-            </p>
-
-            <h1 class="hero__title">
-  Giày sneaker chính hãng
-  <span class="text-gradient">xu hướng 2026</span>
-</h1>
-
-            <p class="hero__lead">
-              Bộ sưu tập giày sneaker nam nữ, thời trang & thể thao. Hàng mới mỗi tuần,
-              freeship nhanh, đổi trả dễ dàng.
-            </p>
-
-            <div class="hero__cta">
-              <a class="btn btn--primary" href="newproducts.html">Mua ngay</a>
-              <a class="btn btn--ghost" href="newproducts.html">Sản phẩm mới</a>
-            </div>
-
-            <dl class="stats" aria-label="Thống kê cửa hàng">
-              <div class="stats__item">
-                <dt class="stats__k">2K+</dt>
-                <dd class="stats__v">Đôi sẵn kho</dd>
-              </div>
-              <div class="stats__item">
-                <dt class="stats__k">48H</dt>
-                <dd class="stats__v">Giao nhanh</dd>
-              </div>
-              <div class="stats__item">
-                <dt class="stats__k">4.9</dt>
-                <dd class="stats__v">Đánh giá trung bình</dd>
-              </div>
-            </dl>
-          </div>
-
-          <div class="hero__media" aria-label="Ảnh giày nổi bật">
-            <div class="hero-card">
-              <div class="hero-card__img">
-                <img
-                  src="images/banner4.png"
-                  alt="Giày sneaker nổi bật trên nền gradient"
-                  loading="lazy"
-                />
-              </div>
-
-              <div class="badge-float" aria-label="Điểm nhấn sản phẩm">
-                <span class="badge-float__top">Mới</span>
-                <span class="badge-float__main">Aero Runner</span>
-                <span class="badge-float__sub">Hàng mới về</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-  
-      <section class="brands" aria-label="Thương hiệu yêu thích">
-        <div class="container-narrow">
-          <p class="section-kicker">Được cộng đồng tin chọn</p>
-          <div class="brands__strip" role="list">
-            <a class="brand-chip" role="listitem" href="giaysneaker.html?brand=nike" aria-label="Nike">
-              <img src="images/NIKE.png" alt="Nike" loading="lazy" />
-            </a>
-            <a class="brand-chip" role="listitem" href="giaysneaker.html?brand=adidas" aria-label="Adidas">
-              <img src="images/ADIDAS.png" alt="Adidas" loading="lazy" />
-            </a>
-            <a class="brand-chip" role="listitem" href="giaysneaker.html?brand=puma" aria-label="Puma">
-              <img src="images/PUMA.png" alt="Puma" loading="lazy" />
-            </a>
-            <a class="brand-chip" role="listitem" href="giaysneaker.html?brand=new-balance" aria-label="New Balance">
-              <img src="images/NB.png" alt="New Balance" loading="lazy" />
-            </a>
-            <a class="brand-chip" role="listitem" href="giaysneaker.html?brand=asics" aria-label="Asics">
-              <img src="images/ASICS.png" alt="Asics" loading="lazy" />
-            </a>
-            <a class="brand-chip" role="listitem" href="giaysneaker.html?brand=converse" aria-label="Converse">
-              <img src="images/CONVERSE.png" alt="Converse" loading="lazy" />
-            </a>
-          </div>
-        </div>
-      </section>
-
-<section id="newproducts" class="section" aria-label="San pham moi">
+    <main id="sneakers" data-sneaker-page="true">
+      <section class="section" aria-label="Tất cả giày sneaker">
         <div class="container-narrow">
           <nav class="breadcrumb" aria-label="Breadcrumb">
             <a class="breadcrumb__link" href="index.html">Trang chủ</a>
             <span class="breadcrumb__sep">/</span>
-            <span class="breadcrumb__current">Sản phẩm mới</span>
+            <span class="breadcrumb__current" id="sneakerBreadcrumb">Giày sneaker</span>
           </nav>
 
-          <div class="page-layout page-layout--full">
+          <div class="page-layout">
+            <aside class="sidebar" aria-label="Bộ lọc">
+              <div class="filter-group">
+                <h3 class="filter-title">Danh mục</h3>
+                <div class="filter-list">
+                  <button class="filter-btn is-active" type="button" data-tag="">Tất cả</button>
+                  <button class="filter-btn" type="button" data-tag="new">Sản phẩm mới</button>
+                  <button class="filter-btn" type="button" data-tag="best">Sản phẩm bán chạy</button>
+                  <button class="filter-btn" type="button" data-tag="sale">SALE</button>
+                </div>
+              </div>
+              <div class="filter-group">
+                <h3 class="filter-title">Thương hiệu</h3>
+                <div class="filter-list">
+                  <button class="filter-btn is-active" type="button" data-brand="">Tất cả</button>
+                  <button class="filter-btn" type="button" data-brand="nike">Nike</button>
+                  <button class="filter-btn" type="button" data-brand="adidas">Adidas</button>
+                  <button class="filter-btn" type="button" data-brand="puma">Puma</button>
+                  <button class="filter-btn" type="button" data-brand="converse">Converse</button>
+                  <button class="filter-btn" type="button" data-brand="asics">Asics</button>
+                  <button class="filter-btn" type="button" data-brand="new-balance">New Balance</button>
+                </div>
+              </div>
+                            <div class="filter-group">
+                <h3 class="filter-title">Giá</h3>
+                <div class="filter-list">
+                  <button class="filter-btn is-active" type="button" data-price="">Tất cả</button>
+                  <button class="filter-btn" type="button" data-price="0-2000000">Dưới 2 triệu</button>
+                  <button class="filter-btn" type="button" data-price="2000000-3000000">2–3 triệu</button>
+                  <button class="filter-btn" type="button" data-price="3000000-9999999">Trên 3 triệu</button>
+                </div>
+              </div>
+</aside>
+
             <div class="page-content">
               <header class="section-head">
                 <div>
-                  <p class="section-kicker">Cập nhật liên tục</p>
-                  <h2 class="section-title">Sản phẩm mới</h2>
+                  <p class="section-kicker">Giày sneaker</p>
+                  <h2 class="section-title" id="sneakerTitle">Tất cả sản phẩm</h2>
                 </div>
               </header>
 
-              <div class="product-grid row" id="productGrid" data-static="true">
-                <article class="product-card col-3 col-md-6 col-sm-12"
+              <div class="product-grid row" id="productGrid">
+<article class="product-card col-3 col-md-6 col-sm-12"
                   data-category="new"
                   data-name="Nike Air Max 90 White/Grey &quot;Signal Green&quot; DM0029"
                   data-price="3990000"
@@ -367,7 +225,6 @@
                     <div class="product-card__price-row">
                       <span class="price-old">3.290.000đ</span>
                       <span class="price-now">2.961.000đ</span>
-                      <span class="price-badge">-10%</span>
                     </div>
                     <div class="product-card__actions">
                       <button class="btn btn--small btn--primary" type="button" data-add-to-cart>Thêm vào giỏ</button>
@@ -465,7 +322,6 @@
                     <div class="product-card__price-row">
                       <span class="price-old">2.490.000đ</span>
                       <span class="price-now">2.241.000đ</span>
-                      <span class="price-badge">-10%</span>
                     </div>
                     <div class="product-card__actions">
                       <button class="btn btn--small btn--primary" type="button" data-add-to-cart>Thêm vào giỏ</button>
@@ -497,23 +353,7 @@
                     </div>
                   </div>
                 </article>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="sale" class="section" aria-label="Sale">
-        <div class="container-narrow">
-          <header class="section-head">
-            <div>
-              <p class="section-kicker">Khuyến mãi</p>
-              <h2 class="section-title">SALE</h2>
-            </div>
-          </header>
-
-          <div class="product-grid row">
-            <article class="product-card col-3 col-md-6 col-sm-12 is-sale"
+              <article class="product-card col-3 col-md-6 col-sm-12 is-sale"
               data-category="sale"
               data-name="Giày adidas Adizero Aruku &quot;Signal Green&quot; JQ8207"
               data-price="1860000"
@@ -530,7 +370,6 @@
                 <div class="product-card__price-row">
                   <span class="price-old">3.100.000đ</span>
                   <span class="price-now">1.860.000đ</span>
-                  <span class="price-badge">-40%</span>
                 </div>
                 <div class="product-card__actions">
                   <button class="btn btn--small btn--primary" type="button" data-add-to-cart>Thêm vào giỏ</button>
@@ -556,7 +395,6 @@
                 <div class="product-card__price-row">
                   <span class="price-old">3.890.000đ</span>
                   <span class="price-now">2.690.000đ</span>
-                  <span class="price-badge">-31%</span>
                 </div>
                 <div class="product-card__actions">
                   <button class="btn btn--small btn--primary" type="button" data-add-to-cart>Thêm vào giỏ</button>
@@ -582,7 +420,6 @@
                 <div class="product-card__price-row">
                   <span class="price-old">4.700.000đ</span>
                   <span class="price-now">3.290.000đ</span>
-                  <span class="price-badge">-30%</span>
                 </div>
                 <div class="product-card__actions">
                   <button class="btn btn--small btn--primary" type="button" data-add-to-cart>Thêm vào giỏ</button>
@@ -608,7 +445,6 @@
                 <div class="product-card__price-row">
                   <span class="price-old">2.850.000đ</span>
                   <span class="price-now">2.090.000đ</span>
-                  <span class="price-badge">-27%</span>
                 </div>
                 <div class="product-card__actions">
                   <button class="btn btn--small btn--primary" type="button" data-add-to-cart>Thêm vào giỏ</button>
@@ -634,7 +470,6 @@
                 <div class="product-card__price-row">
                   <span class="price-old">3.790.000đ</span>
                   <span class="price-now">2.450.000đ</span>
-                  <span class="price-badge">-35%</span>
                 </div>
                 <div class="product-card__actions">
                   <button class="btn btn--small btn--primary" type="button" data-add-to-cart>Thêm vào giỏ</button>
@@ -660,7 +495,6 @@
                 <div class="product-card__price-row">
                   <span class="price-old">7.500.000đ</span>
                   <span class="price-now">5.250.000đ</span>
-                  <span class="price-badge">-30%</span>
                 </div>
                 <div class="product-card__actions">
                   <button class="btn btn--small btn--primary" type="button" data-add-to-cart>Thêm vào giỏ</button>
@@ -686,7 +520,6 @@
                 <div class="product-card__price-row">
                   <span class="price-old">1.950.000đ</span>
                   <span class="price-now">1.490.000đ</span>
-                  <span class="price-badge">-24%</span>
                 </div>
                 <div class="product-card__actions">
                   <button class="btn btn--small btn--primary" type="button" data-add-to-cart>Thêm vào giỏ</button>
@@ -712,7 +545,6 @@
                 <div class="product-card__price-row">
                   <span class="price-old">1.899.000đ</span>
                   <span class="price-now">1.390.000đ</span>
-                  <span class="price-badge">-27%</span>
                 </div>
                 <div class="product-card__actions">
                   <button class="btn btn--small btn--primary" type="button" data-add-to-cart>Thêm vào giỏ</button>
@@ -720,197 +552,16 @@
                 </div>
               </div>
             </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section feature" aria-label="Bộ sưu tập nổi bật">
-        <div class="container feature__grid">
-          <div class="feature__media">
-            <div class="media-frame">
-              <img src="images/Group 12.png" alt="Bộ ảnh lookbook bộ sưu tập" loading="lazy" />
-            </div>
-          </div>
-
-          <div class="feature__content">
-            <p class="section-kicker">Bộ sưu tập</p>
-            <h2 class="section-title">Chất liệu cao cấp. Phong cách đường phố.</h2>
-            <p class="section-lead">
-              Da lộn cao cấp, dệt kim thoáng khí và đế giữa định hình, tối ưu cho ngày dài năng động.
-            </p>
-
-            <ul class="checklist" aria-label="Điểm nổi bật">
-              <li>Thân lưới thoáng khí</li>
-              <li>Đệm foam đàn hồi</li>
-              <li>Đế bám tốt cho đô thị</li>
-              <li>Phối màu giới hạn theo mùa</li>
-            </ul>
-
-            <div class="feature__cta">
-              <a class="btn btn--primary" href="newproducts.html">Khám phá bộ sưu tập</a>
-              <a class="btn btn--ghost" href="bestsellers.html">Xem bán chạy nhất</a>
+                        </div>
+                </article>
+              </div>
             </div>
           </div>
         </div>
       </section>
+    </main>
 
-  
-      <section id="best-sellers" class="section" aria-label="Bán chạy nhất">
-        <div class="container">
-          <header class="section-head">
-            <div>
-              <p class="section-kicker">Phổ biến</p>
-              <h2 class="section-title">Bán chạy nhất</h2>
-            </div>
-
-            <div class="slider-controls" aria-label="Điều khiển băng trượt">
-              <button class="icon-btn icon-btn--ghost" type="button" id="prevSlide" aria-label="Trước">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M15.5 5.5a1 1 0 0 1 0 1.41L10.41 12l5.09 5.09a1 1 0 1 1-1.41 1.41l-5.8-5.8a1 1 0 0 1 0-1.41l5.8-5.8a1 1 0 0 1 1.41 0Z"/>
-                </svg>
-              </button>
-              <button class="icon-btn icon-btn--ghost" type="button" id="nextSlide" aria-label="Sau">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M8.5 18.5a1 1 0 0 1 0-1.41L13.59 12 8.5 6.91A1 1 0 1 1 9.91 5.5l5.8 5.8a1 1 0 0 1 0 1.41l-5.8 5.8a1 1 0 0 1-1.41 0Z"/>
-                </svg>
-              </button>
-            </div>
-          </header>
-
-          <div class="carousel" id="carousel" role="region" aria-label="Băng trượt bán chạy">
-            <article class="mini-card">
-              <a class="mini-card__media" href="#"><img src="images/Group 10.png" alt="Giày adidas Aero Runner 00s" loading="lazy" /></a>
-              <div class="mini-card__body">
-                <h3 class="mini-card__title">Aero Runner 00s</h3>
-                <p class="mini-card__meta"><span class="price-now">3.150.000₫</span></p>
-              </div>
-            </article>
-
-            <article class="mini-card">
-              <a class="mini-card__media" href="#">
-                <img src="images/Group 11.png" alt="Giày Nike Air Force 1 Paint CT" loading="lazy" />
-                <span class="mini-card__badge">-13%</span>
-              </a>
-              <div class="mini-card__body">
-                <h3 class="mini-card__title">Giày Nike Air Force 1 Paint CT</h3>
-                <p class="mini-card__meta"><span class="price-old">4.590.000₫</span> <span class="price-now">3.990.000₫</span></p>
-              </div>
-            </article>
-
-            <article class="mini-card">
-              <a class="mini-card__media" href="#">
-                <img src="images/Group 3.png" alt="Giày Nike Zoom Fly 5" loading="lazy" />
-                <span class="mini-card__badge">-30%</span>
-              </a>
-              <div class="mini-card__body">
-                <h3 class="mini-card__title">Nike Zoom Fly 5</h3>
-                <p class="mini-card__meta"><span class="price-old">4.700.000₫</span> <span class="price-now">3.290.000₫</span></p>
-              </div>
-            </article>
-
-            <article class="mini-card">
-              <a class="mini-card__media" href="#">
-                <img src="images/Group 8.png" alt="Giày Puma Astoria" loading="lazy" />
-                <span class="mini-card__badge">-27%</span>
-              </a>
-              <div class="mini-card__body">
-                <h3 class="mini-card__title">Puma Velocity Nitro 3</h3>
-                <p class="mini-card__meta"><span class="price-old">1.899.000₫</span> <span class="price-now">1.390.000₫</span></p>
-              </div>
-            </article>
-
-            <article class="mini-card">
-              <a class="mini-card__media" href="#">
-                <img src="images/Group 6.png" alt="Giày Converse Chuck Taylor All Star" loading="lazy" />
-                <span class="mini-card__badge">-24%</span>
-              </a>
-              <div class="mini-card__body">
-                <h3 class="mini-card__title">Converse Chuck Taylor</h3>
-                <p class="mini-card__meta"><span class="price-old">1.950.000₫</span> <span class="price-now">1.490.000₫</span></p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="offer" aria-label="Ưu đãi có thời hạn">
-        <div class="container offer__inner">
-          <div class="offer__content">
-            <p class="offer__kicker">Ưu đãi có thời hạn</p>
-            <h2 class="offer__title">FLASH SALE nửa đêm</h2>
-            <p class="offer__lead">Giảm đến <strong>30%</strong> cho các mẫu chọn lọc. Hết là hết.</p>
-
-            <div class="countdown" aria-label="Đếm ngược">
-              <div class="countbox">
-                <span class="countbox__num" id="cdHours">12</span>
-                <span class="countbox__lbl">Giờ</span>
-              </div>
-              <div class="countbox">
-                <span class="countbox__num" id="cdMinutes">34</span>
-                <span class="countbox__lbl">Phút</span>
-              </div>
-              <div class="countbox">
-                <span class="countbox__num" id="cdSeconds">08</span>
-                <span class="countbox__lbl">Giây</span>
-              </div>
-            </div>
-
-            <a class="btn btn--primary" href="newproducts.html">Nhận ưu đãi</a>
-          </div>
-
-          <div class="offer__media" aria-hidden="true">
-            <div class="media-frame media-frame--tilt">
-              <img src="images/Group 13.png" alt="sale-off" loading="lazy" />
-            </div>
-          </div>
-        </div>
-      </section>
-<div id="footer"></div>
-<div class="modal" id="quickView" aria-hidden="true">
-      <div class="modal__overlay" data-modal-close></div>
-      <div class="modal__panel" role="dialog" aria-modal="true" aria-label="Hộp xem nhanh sản phẩm">
-        <div class="modal__head">
-          <h3 class="modal__title" id="qvTitle">Sản phẩm</h3>
-          <button class="icon-btn icon-btn--ghost" type="button" data-modal-close aria-label="Đóng">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M18.3 5.7a1 1 0 0 1 0 1.4L13.4 12l4.9 4.9a1 1 0 1 1-1.4 1.4L12 13.4l-4.9 4.9a1 1 0 1 1-1.4-1.4l4.9-4.9-4.9-4.9a1 1 0 1 1 1.4-1.4l4.9 4.9 4.9-4.9a1 1 0 0 1 1.4 0Z"/>
-            </svg>
-          </button>
-        </div>
-
-        <div class="modal__body">
-          <div class="modal__media">
-            <img id="qvImage" src="https://picsum.photos/id/1062/900/900" alt="Ảnh sản phẩm" />
-          </div>
-          <div class="modal__info">
-            <p class="modal__price" id="qvPrice">0₫</p>
-            <p class="modal__meta">
-              <span class="muted" id="qvCategory">Danh mục</span>
-            </p>
-
-            <p class="muted modal__desc">
-              Chất liệu cao cấp, form ôm chân và phom dáng gọn gàng, phù hợp cho mọi ngày.
-            </p>
-
-            <div class="modal__row">
-              <label class="modal__label" for="qvSize">Kích cỡ</label>
-              <select id="qvSize" class="select">
-                <option>EU 39</option>
-                <option>EU 40</option>
-                <option selected>EU 41</option>
-                <option>EU 42</option>
-                <option>EU 43</option>
-              </select>
-            </div>
-
-            <div class="modal__actions">
-              <button class="btn btn--primary" type="button" id="qvAdd">Thêm vào giỏ</button>
-              <button class="btn btn--ghost" type="button" data-modal-close>Tiếp tục mua sắm</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div id="footer"></div>
 
     <script src="footer.js" defer></script>
     <script src="navbar.js" defer></script>
