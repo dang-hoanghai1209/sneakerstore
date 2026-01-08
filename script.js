@@ -390,8 +390,8 @@
             cartItemsEl.innerHTML = `
               <article class="product-card cart-item">
                 <div class="product-card__body">
-                  <h3 class="product-card__title">Gi? h?ng tr?ng</h3>
-                  <p class="muted">H?y ch?n th?m s?n ph?m b?n y?u th?ch.</p>
+                  <h3 class="product-card__title">Giỏ hàng trống</h3>
+                  <p class="muted">Hãy chọn thêm sản phẩm bạn yêu thích.</p>
                 </div>
               </article>
             `;
@@ -411,7 +411,7 @@
         if (cartItemsEl) {
           cartItemsEl.innerHTML = items
             .map((item) => {
-              const name = escapeHtml(item.name || "S?n ph?m");
+              const name = escapeHtml(item.name || "Sản phẩm");
               const imageUrl = item.image_url || "images/Group 9.png";
               const price = formatVndPlain(item.price || 0);
               const lineTotal = formatVndPlain(item.line_total || 0);
@@ -424,12 +424,12 @@
                   <div class="product-card__body cart-item__body">
                     <div class="cart-item__top">
                       <h3 class="product-card__title">${name}</h3>
-                      <button class="btn btn--small btn--ghost" type="button" data-cart-action="remove" data-item-id="${escapeHtml(item.id)}">X?a</button>
+                      <button class="btn btn--small btn--ghost" type="button" data-cart-action="remove" data-item-id="${escapeHtml(item.id)}">Xóa</button>
                     </div>
                     <div class="cart-item__meta">
                       <span class="price-now">${price}</span>
-                      <span class="muted">?</span>
-                      <span class="muted">T?m t?nh: ${lineTotal}</span>
+                      <span class="muted">x</span>
+                      <span class="muted">Tạm tính: ${lineTotal}</span>
                     </div>
                     <div class="cart-item__controls">
                       <div class="cart-qty">
@@ -562,13 +562,13 @@
         e.preventDefault();
         const cartId = await getOrCreateCartId();
         if (!cartId) {
-          toast("Thanh to?n", "Kh?ng th? t?o gi? h?ng.");
+          toast("Thanh toán", "Không thể tạo giỏ hàng.");
           return;
         }
 
         const cartSnapshot = await fetchCart();
         if (!cartSnapshot || Number(cartSnapshot?.data?.totals?.count || 0) === 0) {
-          toast("Thanh to?n", "Gi? h?ng ?ang tr?ng.");
+          toast("Thanh toán", "Giỏ hàng đang trống.");
           return;
         }
 
@@ -593,7 +593,7 @@
           if (!res.ok || data?.ok === false) {
             const status = res?.status;
             console.error("[Checkout] create order failed", { status, body: data });
-            toast("Thanh to?n", data?.error?.message || "Kh?ng th? t?o ??n h?ng.");
+            toast("Thanh toán", data?.error?.message || "Không thể tạo đơn hàng.");
             return;
           }
 
@@ -601,7 +601,7 @@
           window.location.href = `order-success.html?orderId=${encodeURIComponent(orderId)}`;
         } catch (err) {
           console.error("[Checkout] create order failed", err);
-          toast("Thanh to?n", "Kh?ng th? t?o ??n h?ng.");
+          toast("Thanh toán", "Không thể tạo đơn hàng.");
         }
       });
 

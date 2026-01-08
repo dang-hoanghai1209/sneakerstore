@@ -160,41 +160,47 @@
   </div>
 </header>
 
-    <section class="banner" aria-label="Banner nổi bật">
+    <section class="banner" aria-label="Banner n?i b?t">
       <div class="banner__viewport">
         <div class="banner__track" id="bannerTrack" aria-live="polite">
           <div class="banner__slide is-active">
-            <img src="images/banner1.png" alt="Banner khuyến mãi giày sneaker" loading="lazy" />
-            <div class="banner__overlay">
-              <p class="banner__kicker">Giày sneaker</p>
-              <h2 class="banner__title">Ưu đãi nổi bật</h2>
-              <a class="btn btn--primary banner__cta" href="newproducts.html">Mua ngay</a>
-            </div>
+            <a class="banner__link" href="newproducts.html" aria-label="Xem sản phẩm mới">
+              <img src="images/banner1.png" alt="Banner sản phẩm mới" loading="lazy" />
+              <div class="banner__overlay">
+                <p class="banner__kicker">Sản phẩm mới</p>
+                <h2 class="banner__title">Bộ sưu tập vừa ra mắt</h2>
+                <span class="btn btn--primary banner__cta">Mua ngay</span>
+              </div>
+            </a>
           </div>
           <div class="banner__slide">
-            <img src="images/banner2.png" alt="Banner bộ sưu tập mới" loading="lazy" />
-            <div class="banner__overlay">
-              <p class="banner__kicker">Bộ sưu tập</p>
-              <h2 class="banner__title">Mẫu mới 2026</h2>
-              <a class="btn btn--primary banner__cta" href="newproducts.html">Khám phá</a>
-            </div>
+            <a class="banner__link" href="sale.html" aria-label="Xem SALE">
+              <img src="images/banner2.png" alt="Banner SALE" loading="lazy" />
+              <div class="banner__overlay">
+                <p class="banner__kicker">SALE</p>
+                <h2 class="banner__title">Giảm giá lớn đến 30%</h2>
+                <span class="btn btn--primary banner__cta">Xem ưu đãi</span>
+              </div>
+            </a>
           </div>
           <div class="banner__slide">
-            <img src="images/banner3.png" alt="Banner sản phẩm bán chạy" loading="lazy" />
-            <div class="banner__overlay">
-              <p class="banner__kicker">Bán chạy</p>
-              <h2 class="banner__title">Top sản phẩm hot</h2>
-              <a class="btn btn--primary banner__cta" href="bestsellers.html">Xem ngay</a>
-            </div>
+            <a class="banner__link" href="bestsellers.html" aria-label="Xem s?n ph?m b?n ch?y">
+              <img src="images/banner3.png" alt="Banner bán chạy" loading="lazy" />
+              <div class="banner__overlay">
+                <p class="banner__kicker">Bán chạy</p>
+                <h2 class="banner__title">Top sản phẩm hot</h2>
+                <span class="btn btn--primary banner__cta">Xem ngay</span>
+              </div>
+            </a>
           </div>
         </div>
         <button class="banner__control banner__control--prev" type="button" aria-label="Banner trước" id="bannerPrev">
-          <span aria-hidden="true">‹</span>
+          <span aria-hidden="true"><</span>
         </button>
         <button class="banner__control banner__control--next" type="button" aria-label="Banner sau" id="bannerNext">
-          <span aria-hidden="true">›</span>
+          <span aria-hidden="true">></span>
         </button>
-        <div class="banner__dots" role="tablist" aria-label="Chọn banner">
+        <div class="banner__dots" role="tablist" aria-label="Chân banner">
           <button class="banner__dot is-active" type="button" aria-label="Banner 1" data-banner-dot="0"></button>
           <button class="banner__dot" type="button" aria-label="Banner 2" data-banner-dot="1"></button>
           <button class="banner__dot" type="button" aria-label="Banner 3" data-banner-dot="2"></button>
@@ -202,7 +208,7 @@
       </div>
     </section>
 
-    <main id="home">
+<main id="home">
       <section class="hero section-full" aria-label="Giới thiệu">
         <div class="container hero__grid">
           <div class="hero__content">
